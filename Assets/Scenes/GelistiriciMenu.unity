@@ -360,7 +360,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\xC7\u0131nar TOP\xC7INAR\nKerem Mert ERY\u0130\u011E\u0130T\nSarp Toygar
-    AKKAYA\nEfe \xD6G\xDCL\nEzel \xC7ET\u0130NKAYA\nTu\u011Fbanur YAL\xC7IN"
+    AKKAYA\nEfe \xD6G\xDCL\nEzel \xC7ET\u0130NKAYA"
 --- !u!222 &646963679
 CanvasRenderer:
   m_ObjectHideFlags: 0
