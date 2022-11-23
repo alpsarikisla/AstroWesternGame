@@ -5,11 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D player;//Karakterimiz
-
     [SerializeField]//Unity içerisinden kontrol edilebilir oluyor
     private float movementSpeed;//HareketHızı
     private Animator karakterAnimasyon;
-
     private bool sagabak;
 
     void Start()
@@ -23,22 +21,22 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         //Karakterimizin yatay eksende hareket edebileceğini tanımladık
-        float horizontal = Input.GetAxis("Horizontal");
-        HareketEt(horizontal);
-        Don(horizontal);
+        float yon = Input.GetAxis("Horizontal");//Yatay eksende sağa git komutu verilirse(D'ye basılırsa) 1 Sola git komutu verilerise (A'ya Basılırsa) -1 getirir
+        HareketEt(yon);
+        Don(yon);
     }
 
-    private void HareketEt(float horizontal)
+    private void HareketEt(float netarafa)
     {
-        player.velocity = new Vector2(horizontal * movementSpeed ,player.velocity.y);
+        player.velocity = new Vector2(netarafa * movementSpeed ,player.velocity.y);
         //Hareket hızı çarpanı ile yatay eksende hareket sağlanıyor
 
-        karakterAnimasyon.SetFloat("speed", Mathf.Abs(horizontal));
+        karakterAnimasyon.SetFloat("speed", Mathf.Abs(netarafa));
     }
 
-    private void Don(float horizontal)
+    private void Don(float netarafa)
     {
-        if (horizontal > 0 && !sagabak || horizontal < 0 && sagabak)
+        if (netarafa > 0 && !sagabak || netarafa < 0 && sagabak)
         {
             sagabak = !sagabak;
             Vector3 theScale = transform.localScale;
