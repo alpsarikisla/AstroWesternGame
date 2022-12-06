@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Animator karakterAnimasyon;
     private bool sagabak;
     private bool attack;
+    private bool slide;
 
     void Start()
     {
@@ -34,17 +35,25 @@ public class Player : MonoBehaviour
 
     private void HareketEt(float netarafa)
     {
-        if (!karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        if (!karakterAnimasyon.GetBool("slide") && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             player.velocity = new Vector2(netarafa * movementSpeed, player.velocity.y);
             //Hareket hýzý çarpaný ile yatay eksende hareket saðlanýyor
+        }
+        if (slide && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
+        {
+            karakterAnimasyon.SetBool("slide", true);
+        }
+        else if(!karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
+        {
+            karakterAnimasyon.SetBool("slide", false);
         }
         karakterAnimasyon.SetFloat("speed", Mathf.Abs(netarafa));
     }
 
     private void HandleAttack()
     {
-        if (attack)
+        if (attack && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             karakterAnimasyon.SetTrigger("attack");
             player.velocity = Vector2.zero;
@@ -56,6 +65,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             attack = true;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            slide = true;
         }
     }
 
@@ -73,6 +86,7 @@ public class Player : MonoBehaviour
     void ResetValues()
     {
         attack = false;
+        slide = false;
     }
 
 }
