@@ -9,24 +9,6 @@ public class Player : MonoBehaviour
     private float movementSpeed;//HareketHýzý
     private Animator karakterAnimasyon;
     private bool sagabak;
-
-    [SerializeField]
-    private Transform[] groundPoints;//Karaktere oluþturduðumuz GroundPointleri buraya ekleyeceðiz
-
-    [SerializeField]
-    private float groundRadius;
-
-    [SerializeField]
-    private LayerMask whatIsGround;
-   
-    private bool isGrounded;
-
-    private bool jump;
-    private bool slide;
-
-    [SerializeField]
-    private float jumpForce;
-
     private bool attack;
 
     void Start()
@@ -36,76 +18,47 @@ public class Player : MonoBehaviour
         player = GetComponent<Rigidbody2D>();
         karakterAnimasyon = GetComponent<Animator>();
     }
-
-    void Update()
+    private void Update()
     {
         HandleInput();
     }
-
     void FixedUpdate()
     {
         //Karakterimizin yatay eksende hareket edebileceðini tanýmladýk
         float yon = Input.GetAxis("Horizontal");//Yatay eksende saða git komutu verilirse(D'ye basýlýrsa) 1 Sola git komutu verilerise (A'ya Basýlýrsa) -1 getirir
-
-        isGrounded = IsGrounded();
-
         HareketEt(yon);
-
         Don(yon);
-
-        HandleAttaks();
-
+        HandleAttack();
         ResetValues();
     }
 
     private void HareketEt(float netarafa)
     {
-        if (!karakterAnimasyon.GetBool("slide") && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        if (!karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             player.velocity = new Vector2(netarafa * movementSpeed, player.velocity.y);
             //Hareket hýzý çarpaný ile yatay eksende hareket saðlanýyor
         }
-        if (slide && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
-        {
-            karakterAnimasyon.SetBool("slide", true);
-        }
-        else if (!karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
-        {
-            karakterAnimasyon.SetBool("slide", false);
-        }
-
         karakterAnimasyon.SetFloat("speed", Mathf.Abs(netarafa));
-
-        if (isGrounded && jump)
-        {
-            isGrounded = false;
-            player.AddForce(new Vector2(0, jumpForce));
-        }
     }
-    private void HandleAttaks()
+
+    private void HandleAttack()
     {
-        if (attack && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        if (attack)
         {
             karakterAnimasyon.SetTrigger("attack");
             player.velocity = Vector2.zero;
         }
     }
-    
+
     private void HandleInput()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             attack = true;
         }
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            slide = true;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            jump = true;
-        }
     }
+
     private void Don(float netarafa)
     {
         if (netarafa > 0 && !sagabak || netarafa < 0 && sagabak)
@@ -117,28 +70,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
-    {
-        if (player.velocity.y <= 0)
-        {
-            foreach (Transform point in groundPoints)
-            {
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRadius, whatIsGround);
-                for (int i = 0; i < colliders.Length; i++)
-                {
-                    if (colliders[i].gameObject != gameObject)
-                    {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-    private void ResetValues()
+    void ResetValues()
     {
         attack = false;
-        slide = false;
-        jump = false;
     }
+
 }

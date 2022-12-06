@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637992575864041995
+      ticks: 638047467260000000
     m_Hash: 2989432480
   m_LockFileStatus:
     m_FilePath: C:/Users/Alp/Documents/GitHub/AstroWesternGame/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637992576002731252
+      ticks: 638047467260000000
     m_Hash: 1323924065
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -34,7 +34,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 2D
-      type: 
+      type: asset
       description: 2D Animation provides all the necessary tooling and runtime components
         for skeletal animation using Sprites.
       status: 4
@@ -111,6 +111,8 @@ m_PackageAssets:
         - 5.1.1
         - 5.2.0
         - 5.2.1
+        - 5.2.3
+        - 5.2.4
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
@@ -127,18 +129,27 @@ m_PackageAssets:
         - 7.0.4
         - 7.0.5
         - 7.0.6
+        - 7.0.7
+        - 7.0.8
         - 8.0.0-pre.3
         - 8.0.0-pre.4
         - 8.0.0
         - 8.0.1
         - 8.0.2
+        - 8.0.3
+        - 8.0.4
+        - 8.0.5
         - 9.0.0-pre.1
         - 9.0.0-pre.3
+        - 9.0.0
+        - 10.0.0-pre.1
         compatible:
         - 5.1.0
         - 5.1.1
         - 5.2.0
         - 5.2.1
+        - 5.2.3
+        - 5.2.4
         verified: 5.1.1
       dependencies:
       - name: com.unity.2d.common
@@ -181,7 +192,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -207,7 +218,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 
-      type: 
+      type: tool
       description: 'The 2D Pixel Perfect package contains the Pixel Perfect Camera
         component which ensures your pixel art remains crisp and clear at different
         resolutions, and stable in motion.
@@ -238,6 +249,8 @@ m_PackageAssets:
         - 5.0.0-pre.2
         - 5.0.0
         - 5.0.1
+        - 5.0.2
+        - 5.0.3
         compatible:
         - 4.0.1
         verified: 4.0.1
@@ -282,7 +295,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 2D
-      type: 
+      type: asset
       description: A ScriptedImporter for importing Adobe Photoshop PSB (Photoshop
         Big) file format. The ScriptedImporter is currently targeted for users who
         wants to create multi Sprite character animation using Unity 2D Animation
@@ -330,6 +343,7 @@ m_PackageAssets:
         - 4.1.3
         - 4.2.0
         - 4.3.0
+        - 4.3.1
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.1
@@ -344,15 +358,22 @@ m_PackageAssets:
         - 6.0.2
         - 6.0.3
         - 6.0.4
+        - 6.0.5
+        - 6.0.6
         - 7.0.0-pre.3
         - 7.0.0-pre.4
         - 7.0.0
         - 7.0.1
+        - 7.0.2
+        - 7.0.3
         - 8.0.0-pre.1
         - 8.0.0-pre.3
+        - 8.0.0
+        - 9.0.0-pre.1
         compatible:
         - 4.2.0
         - 4.3.0
+        - 4.3.1
         verified: 4.2.0
       dependencies:
       - name: com.unity.2d.common
@@ -394,7 +415,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -471,7 +492,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 2D
-      type: 
+      type: asset
       description: SpriteShape Runtime & Editor Package contains the tooling and
         the runtime component that allows you to create very organic looking spline
         based 2D worlds. It comes with intuitive configurator and a highly performant
@@ -546,10 +567,15 @@ m_PackageAssets:
         - 7.0.2
         - 7.0.3
         - 7.0.4
+        - 7.0.5
+        - 7.0.6
         - 8.0.0-pre.4
         - 8.0.0-pre.5
         - 8.0.0
+        - 8.0.1
         - 9.0.0-pre.1
+        - 9.0.0
+        - 10.0.0-pre.1
         compatible:
         - 5.2.0
         - 5.3.0
@@ -599,7 +625,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -675,7 +701,7 @@ m_PackageAssets:
         email: 
         url: 
       category: Editor
-      type: 
+      type: asset
       description: The Version Control package gives you the ability to use either
         Collaborate or Plastic SCM for Unity (beta) in the Unity editor. To use Plastic
         SCM for Unity (beta), a Plastic SCM subscription is required. Learn more
@@ -731,6 +757,10 @@ m_PackageAssets:
         - 1.15.16
         - 1.15.17
         - 1.15.18
+        - 1.17.0
+        - 1.17.1
+        - 1.17.2
+        - 1.17.6
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -748,6 +778,10 @@ m_PackageAssets:
         - 1.15.16
         - 1.15.17
         - 1.15.18
+        - 1.17.0
+        - 1.17.1
+        - 1.17.2
+        - 1.17.6
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -789,7 +823,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -815,7 +849,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 
-      type: 
+      type: asset
       description: The JetBrains Rider Editor package provides an integration for
         using the JetBrains Rider IDE as a code editor for Unity. It adds support
         for generating .csproj files for code completion and auto-discovery of installations.
@@ -853,6 +887,8 @@ m_PackageAssets:
         - 3.0.12
         - 3.0.13
         - 3.0.14
+        - 3.0.15
+        - 3.0.16
         compatible:
         - 1.0.2
         - 1.0.6
@@ -884,6 +920,8 @@ m_PackageAssets:
         - 3.0.12
         - 3.0.13
         - 3.0.14
+        - 3.0.15
+        - 3.0.16
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -906,7 +944,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -932,7 +970,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 
-      type: 
+      type: asset
       description: Code editor integration for supporting Visual Studio as code editor
         for unity. Adds support for generating csproj files for intellisense purposes,
         auto discovery of installations, etc.
@@ -958,6 +996,7 @@ m_PackageAssets:
         - 2.0.12
         - 2.0.14
         - 2.0.15
+        - 2.0.16
         compatible:
         - 1.0.2
         - 1.0.3
@@ -977,7 +1016,8 @@ m_PackageAssets:
         - 2.0.12
         - 2.0.14
         - 2.0.15
-        verified: 2.0.15
+        - 2.0.16
+        verified: 2.0.16
       dependencies:
       - name: com.unity.test-framework
         version: 1.1.9
@@ -999,7 +1039,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -1098,7 +1138,7 @@ m_PackageAssets:
         email: 
         url: 
       category: Unity Test Framework
-      type: 
+      type: asset
       description: Test framework for running Edit mode and Play mode tests in Unity.
       status: 4
       errors: []
@@ -1137,6 +1177,8 @@ m_PackageAssets:
         - 1.1.29
         - 1.1.30
         - 1.1.31
+        - 1.1.33
+        - 1.3.0
         - 2.0.1-exp.1
         - 2.0.1-pre.12
         - 2.0.1-pre.18
@@ -1144,10 +1186,12 @@ m_PackageAssets:
         - 1.1.29
         - 1.1.30
         - 1.1.31
+        - 1.1.33
+        - 1.3.0
         - 2.0.1-exp.1
         - 2.0.1-pre.12
         - 2.0.1-pre.18
-        verified: 1.1.31
+        verified: 1.1.33
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
@@ -1173,7 +1217,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
@@ -1365,7 +1409,7 @@ m_PackageAssets:
         email: 
         url: 
       category: 
-      type: 
+      type: asset
       description: Use Unity Timeline to create cinematic content, game-play sequences,
         audio sequences, and complex particle effects.
       status: 4
@@ -1444,6 +1488,7 @@ m_PackageAssets:
         - 1.7.0-pre.2
         - 1.7.0
         - 1.7.1
+        - 1.7.2
         compatible:
         - 1.4.8
         - 1.5.0-pre.2
@@ -1472,6 +1517,7 @@ m_PackageAssets:
         - 1.7.0-pre.2
         - 1.7.0
         - 1.7.1
+        - 1.7.2
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
@@ -1505,7 +1551,7 @@ m_PackageAssets:
         isDefault: 1
         capabilities: 7
       hasRegistry: 1
-      hideInEditor: 1
+      hideInEditor: 0
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
