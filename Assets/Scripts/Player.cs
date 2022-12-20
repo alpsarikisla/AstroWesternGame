@@ -51,11 +51,16 @@ public class Player : MonoBehaviour
         HareketEt(yon);
         Don(yon);
         HandleAttack();
+        HandleLayers();
         ResetValues();
     }
 
     private void HareketEt(float netarafa)
     {
+        if(player.velocity.y < 0)
+        {
+            karakterAnimasyon.SetBool("land", true);
+        }
         if (!karakterAnimasyon.GetBool("slide") && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && (isGrounded || airControl))
         {
             player.velocity = new Vector2(netarafa * movementSpeed, player.velocity.y);
@@ -65,6 +70,7 @@ public class Player : MonoBehaviour
         {
             isGrounded = false;
             player.AddForce(new Vector2(0, jumpForce));
+            karakterAnimasyon.SetTrigger("jump");
         }
         if (slide && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsName("Slide"))
         {
@@ -131,11 +137,24 @@ public class Player : MonoBehaviour
                 {
                     if (colliders[i].gameObject != gameObject)
                     {
+                        karakterAnimasyon.ResetTrigger("jump");
+                        karakterAnimasyon.SetBool("land", false);
                         return true;
                     }
                 }
             }
         }
         return false;
+    }
+    private void HandleLayers()
+    {
+        if (!isGrounded)
+        {
+            karakterAnimasyon.SetLayerWeight(1, 1);
+        }
+        else
+        {
+            karakterAnimasyon.SetLayerWeight(1, 0);
+        }
     }
 }
