@@ -26,6 +26,9 @@ public class Player : MonoBehaviour
     private bool jump;
 
     [SerializeField]
+    private bool airControl;
+
+    [SerializeField]
     private float jumpForce;
 
     void Start()
@@ -53,7 +56,7 @@ public class Player : MonoBehaviour
 
     private void HareketEt(float netarafa)
     {
-        if (!karakterAnimasyon.GetBool("slide") && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        if (!karakterAnimasyon.GetBool("slide") && !karakterAnimasyon.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && (isGrounded || airControl))
         {
             player.velocity = new Vector2(netarafa * movementSpeed, player.velocity.y);
             //Hareket hýzý çarpaný ile yatay eksende hareket saðlanýyor
